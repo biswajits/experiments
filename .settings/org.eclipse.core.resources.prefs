@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/ws/model/Employee.java=UTF-8
+encoding//src/com/ws/model/Person.java=UTF-8
+encoding//src/com/ws/service/EmployeeServiceImpl.java=UTF-8
+encoding//src/com/ws/service/EmployeeServiceImplService.java=UTF-8
+encoding//src/com/ws/service/EmployeeServiceImplServiceLocator.java=UTF-8
+encoding//src/com/ws/service/EmployeeServiceImplSoapBindingStub.java=UTF-8
+encoding//src/com/ws/service/PerosnServiceImpl.java=UTF-8
+encoding//src/com/ws/service/PerosnServiceImplService.java=UTF-8
+encoding//src/com/ws/service/PerosnServiceImplServiceLocator.java=UTF-8
+encoding//src/com/ws/service/PerosnServiceImplSoapBindingStub.java=UTF-8
