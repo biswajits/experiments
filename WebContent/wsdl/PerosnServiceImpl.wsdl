@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.ws.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.ws.com" xmlns:intf="http://service.ws.com" xmlns:tns1="http://model.ws.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.ws.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.ws.com"/>
+   <element name="searchPerson">
+    <complexType>
+     <sequence>
+      <element name="per" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchPersonResponse">
+    <complexType>
+     <sequence>
+      <element name="searchPersonReturn" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.ws.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Person">
+    <sequence>
+     <element name="addr" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="searchPersonResponse">
+
+      <wsdl:part element="impl:searchPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchPersonRequest">
+
+      <wsdl:part element="impl:searchPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PerosnServiceImpl">
+
+      <wsdl:operation name="searchPerson">
+
+         <wsdl:input message="impl:searchPersonRequest" name="searchPersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchPersonResponse" name="searchPersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PerosnServiceImplSoapBinding" type="impl:PerosnServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="searchPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PerosnServiceImplService">
+
+      <wsdl:port binding="impl:PerosnServiceImplSoapBinding" name="PerosnServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/WSTest/services/PerosnServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
