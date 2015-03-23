@@ -2,15 +2,24 @@ package net.cxf.ws.dto;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
 @XmlRootElement(name="Book")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Book implements Serializable{
 	
+	@XmlElement(name="name")
 	private String name;
+	@XmlElement(name="auther")
 	private String auther;
-	private String id;
+	@XmlElement(name="id",nillable=true, required=false)
+	private int id;
+	@XmlElement(name="price",nillable=true, required=false)
+	private double price;
 	
 	public String getName() {
 		return name;
@@ -24,10 +33,17 @@ public class Book implements Serializable{
 	public void setAuther(String auther) {
 		this.auther = auther;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
 }

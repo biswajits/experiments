@@ -8,12 +8,12 @@ import net.cxf.ws.dto.Book;
 public class BookSelfServiceImpl implements BookSelfService {
 
 	@Override
-	public Book getBookDetails(String id) {
+	public Book getBookDetails(Book book) {
 		System.out.println("### Service Invoked ###");
-		Book book = new Book();
-		book.setAuther("biswa");
-		book.setId(id);
-		book.setName("java");
+		//Book book = new Book();
+//		book.setAuther("biswa");
+//		book.setId(id);
+//		book.setName("java");
 		
 		return book;
 	}

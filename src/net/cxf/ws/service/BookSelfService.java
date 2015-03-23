@@ -9,6 +9,6 @@ import net.cxf.ws.dto.Book;
 public interface BookSelfService {
 	
 	@WebMethod
-	public Book getBookDetails(String id);
+	public Book getBookDetails(Book book);
 
 }
