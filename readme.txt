@@ -66,4 +66,17 @@ http://www.javabeat.net/developing-a-web-service-with-cxf/
 		</listener>
 		
 #######################################################################################
+
+######################  CXF Interceptor ##########################
+
+       interceptor bean in bean.xml----> <bean id="cxfInterceptor" class="net.cxf.ws.util.CXFLogging"/>
+       
+       interceptor config in bean.xml 
+       			<cxf:bus>
+					<cxf:inInterceptors>
+						<ref bean="cxfInterceptor"/>
+					</cxf:inInterceptors>
+				</cxf:bus>
+				
+		
 	
