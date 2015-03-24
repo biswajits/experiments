@@ -78,5 +78,18 @@ http://www.javabeat.net/developing-a-web-service-with-cxf/
 					</cxf:inInterceptors>
 				</cxf:bus>
 				
+#########################################################
+
+################ Excludes Model Property from XSD #####################
+
+Using @XmlTransient annotation properties will not publish in WeB Service
+
+		@XmlTransient
+		private String publisher;
+		@XmlTransient
+		private String publisherId; 
+		
+#############################################################
+				
 		
 	

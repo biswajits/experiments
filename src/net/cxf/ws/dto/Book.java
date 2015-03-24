@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 
 @XmlRootElement(name="Book")
@@ -20,6 +21,10 @@ public class Book implements Serializable{
 	private int id;
 	@XmlElement(name="price",nillable=true, required=false)
 	private double price;
+	@XmlTransient    //using this annotation this field will excludes from xsd(will not publish as webservice)
+	private String publisher;
+	@XmlTransient	 //using this annotation this field will excludes from xsd(will not publish as webservice)
+	private String publisherId;
 	
 	public String getName() {
 		return name;
