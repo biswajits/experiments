@@ -1,6 +1,7 @@
 package net.cxf.ws.service;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import net.cxf.ws.dto.Book;
@@ -9,6 +10,6 @@ import net.cxf.ws.dto.Book;
 public interface BookSelfService {
 	
 	@WebMethod
-	public Book getBookDetails(Book book);
+	public Book getBookDetails(@WebParam(name="bookInput")Book book);
 
 }
